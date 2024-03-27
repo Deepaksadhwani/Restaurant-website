@@ -1,6 +1,6 @@
 const MealsSummary = () => {
   return (
-    <section className="flex flex-col text-center text-xl w-3/6 space-y-4 bg-gradient-to-r from-black via-gray-600 to-black text-white font-semi h-3/6 shadow-lg p-12 rounded-lg ">
+    <section className="flex flex-col text-center text-xl w-3/6 space-y-4 bg-gradient-to-r from-black via-gray-600 to-black text-white font-semi mb-2 h-2/6 shadow-lg shadow-gray-900 p-6 rounded-lg ">
       <h2 className="text-3xl">Delicious Food, Delivered To You</h2>
       <p>
         Choose your favorite meal from our broad selection of available meals
@@ -11,7 +11,6 @@ const MealsSummary = () => {
         of course by experienced chefs!
       </p>
     </section>
-    
   );
 };
 
