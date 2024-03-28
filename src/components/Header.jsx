@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import Cart from "./Cart";
+import appStore from "../store/appStore";
 
 const Header = () => {
-  const [count, setCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const appStorecontext = useContext(appStore);
+
+  const numberOfCartItems = appStorecontext.items.reduce((currNumber, item) => {
+    return currNumber + item.amount;
+  }, 0);
 
   const showOrderCartHandler = () => {
     setIsOpen(true);
@@ -12,7 +17,7 @@ const Header = () => {
 
   const hideOrderCartHandler = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
     <div>
@@ -26,11 +31,11 @@ const Header = () => {
         </div>
         <button
           onClick={showOrderCartHandler}
-          className="flex space-x-4 text-2xl items-center hover:scale-[1.1] transition-all duration-200 hover:border-2 border-yellow-500 p-2 hover:rounded-lg font-semibold text-white"
+          className="flex space-x-4 text-2xl items-center hover:scale-[1.1] transition-all duration-200 hover:border-2  border-lime-500 p-2 hover:rounded-lg font-semibold text-white "
         >
           <FaShoppingCart />
           <h3>Your Cart</h3>
-          <span>{count}</span>
+          <span>{numberOfCartItems}</span>
         </button>
       </div>
     </div>
