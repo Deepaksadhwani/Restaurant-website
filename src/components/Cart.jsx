@@ -1,13 +1,12 @@
 import React from "react";
 import Modal from "./Modal";
 
-const Cart = () => {
+const Cart = ({ onHideCart }) => {
   return (
     <div>
-      <Modal/>
+      <Modal hideCart={onHideCart} />
     </div>
   );
 };
 
 export default Cart;
-
