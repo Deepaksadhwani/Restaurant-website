@@ -15,7 +15,7 @@ const Modal = ({ hideCart }) => {
   );
   return createPortal(
     <div className=" fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-      <div className="bg-white broder p-8 rounded-lg shadow-lg w-96">
+      <div className="bg-white border p-8 rounded-lg shadow-lg w-96">
         <div className="mb-4">{cartItems}</div>
         <div className="flex justify-between mb-4">
           <span className="text-gray-900">Total Amount</span>
