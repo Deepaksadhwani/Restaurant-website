@@ -1,23 +1,15 @@
-
-import React, { useState } from "react";
+import React from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import cartContext from "./store/cartContext";
-
+import appStoreProvider from "./store/appStoreProvider";
 const App = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCartHandler = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
-  };
-
   return (
-    <cartContext.Provider value={{ items: cartItems }}>
-      <div className="">
-        <Header />
-        <Body addToCart={addToCartHandler} />
+    <appStoreProvider>
+        <div className="">
+        <Header></Header>
+        <Body></Body>
       </div>
-    </cartContext.Provider>
+    </appStoreProvider>
   );
 };
 
